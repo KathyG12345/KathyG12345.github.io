@@ -40,6 +40,11 @@ img {
     margin: 10px 10px 10px 15px; 
 }
 
+.img2 {
+    border-radius: 0%;
+    margin: 0px;
+}
+
 .img-header {
     border-radius: 10%;
     margin: 0px;
@@ -60,7 +65,9 @@ main {
 
 body {
     margin: 0px;
+    min-height: 100dvh;
 }
+
 
 .small-image {
     height: 15px;
@@ -69,7 +76,7 @@ body {
 
 p {
     padding: 10px 5px 10px 5px;
-    display: center;
+    display: flex;
 }
 
 button {
@@ -96,3 +103,9 @@ div {
    justify-content: space-evenly;
     padding: 10px;
 }
+
+canvas {
+    background-color: #f1ccc5;
+    
+}
+

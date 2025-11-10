@@ -18,20 +18,78 @@
 <h2>Work Experience</h2>
 </header>
 <main>
-    <div>
-
+  
+  
+<div>
     <p>
-       <img src="resume.png" alt="picture of Kathy's resume" height="500"> 
+       <img class="img2" src="resume.png" alt="picture of Kathy's resume" height="600"> 
        
     </p>
-    </div>
-    <div class="container">
-<button>
-        Click
-    </button>
-
-    </div>
-
+    
+    <canvas width="550" height="550"></canvas>
+ 
+  </div>
+<script>
+        var canvas = document.querySelector("canvas");
+        var drawingSurface = canvas.getContext("2d");
+        var spriteObject = 
+        {
+           
+            x : 0,
+            y : 0, 
+            width : 63, 
+            height : 125,
+        };
+        var moo = Object.create(spriteObject);
+        moo.x = 100;
+        moo.y = 100;
+        var image = new Image();
+        image.addEventListener("load", loadHandler, false);
+        image.src = "lunamoth.jpg";
+        var Xspeed = 2;
+        var Yspeed = 2;
+        function loadHandler()
+        {
+            update();
+        }
+        function update()
+        {
+            window.requestAnimationFrame(update, canvas);
+            moo.x += Xspeed;
+            moo.y += Yspeed;
+            if(moo.width + moo.x > 490)
+            {
+                Xspeed = -2;
+            }
+            else if(moo.x < 1)
+            {
+                Xspeed = 2;
+            }
+            else if(moo.height + moo.y > 615)
+            {
+                Yspeed = -2;
+            }
+            else if(moo.y < 1)
+            {
+                Yspeed = 2;
+            }
+            render();
+            
+        }
+        function render()
+        {
+            drawingSurface.clearRect(0,0, canvas.width, canvas.height);
+            drawingSurface.drawImage
+            (
+            image, 
+            Math.floor(moo.x), Math.floor(moo.y),
+            moo.height, moo.width
+            );
+            drawingSurface.font = "bold 20px Arial";
+            drawingSurface.fillText(text, 10, 30, 200);
+            console.log(drawingSurface.measureText(text).width);
+        }
+    </script>
     
 </main>
   
